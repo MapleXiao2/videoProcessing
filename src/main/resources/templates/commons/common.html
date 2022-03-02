@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>video</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:fragment="topbar">
+    <div class="masthead clearfix">
+        <div class="inner">
+            <h3 class="masthead-brand">Hello</h3>
+            <nav>
+                <ul class="nav masthead-nav">
+                    <li th:class="${#httpServletRequest.getRequestURI().contains('index') or #httpServletRequest.getRequestURI().equals('/')?'active':'default'}">
+                        <a th:href="@{/index}">Home</a></li>
+                    <li th:class="${#httpServletRequest.getRequestURI().contains('features')?'active':'default'}"><a
+                            th:href="@{/features}">Features</a></li>
+                    <li th:class="${#httpServletRequest.getRequestURI().contains('contact')?'active':'default'}"><a
+                            th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
