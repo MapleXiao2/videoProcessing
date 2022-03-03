@@ -1,9 +1,3 @@
-server:
-  port: 2360
-
 spring:
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 1GB
-      max-request-size: 1GB
+  profiles:
+    active: dev
