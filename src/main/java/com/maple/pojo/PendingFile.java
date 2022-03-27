@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class VideoFile implements Serializable {
+public class PendingFile implements Serializable {
     private String fileName;
     private String fileUrl;
     private User user;

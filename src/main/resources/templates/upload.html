@@ -11,11 +11,12 @@
 <body>
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
-    <legend>在这里上传视频</legend>
+    <legend>在这里上传视频与相应包含人物形象的图片</legend>
 </fieldset>
 <div class="layui-upload">
     <button type="button" class="layui-btn layui-btn-normal" id="testList">选择一个或多个文件</button>
     <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+    <button type="submit" class="layui-btn" id="Reid-Action" th:action="@{/Reid}">开始工作</button>
     <div class="layui-upload-list" style="max-width: 1000px;">
         <table class="layui-table">
             <colgroup>
@@ -51,7 +52,7 @@
             elem: '#testList'
             , elemList: $('#demoList') //列表元素对象
             , url: '/uploadVideo' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
-            , accept: 'video'
+            , accept: 'file'
             , multiple: true
             , number: 3
             , auto: false

@@ -3,8 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.maple.dao.FileDao">
-    <insert id="addFile" parameterType="videoFile">
+    <insert id="addFile" parameterType="pendingFile">
         insert into vedioprocessing.files(file_name, file_url, file_to_user)
-        values (#{fileName},#{fileUrl},#{user.userId});
+        values (#{fileName}, #{fileUrl}, #{user.userId});
     </insert>
+    
+    
+<!--    <resultMap id="selectedFile" type="pendingFile">-->
+<!--        <result property="user.userId" column="file_to_user"/>-->
+<!--        <result property="fileName" column="file_name"/>-->
+<!--        <result property="fileUrl" column="file_url"/>-->
+<!--    </resultMap>-->
+    <select id="getFiles" parameterType="user" resultType="string">
+        select file_name as fileName
+        from vedioprocessing.files
+        where file_to_user = #{userId};
+    </select>
 </mapper>
